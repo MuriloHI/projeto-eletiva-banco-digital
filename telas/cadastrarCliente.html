@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="../styles/style_cadastrarCliente.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../img/logo.png" alt="logo da gamBANK">
+        <h1>gamBANK</h1>
+        <p><a href="#">Sair</a></p>
+    </header>
+
+    <nav class="menu-horizontal">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="cadastroCliente.html">Cadastro Cliente</a></li>
+            <li><a href="#"> Opção 2</a></li>
+            <li><a href="#">Opção 3</a></li>
+            <li><a href="#">Opção 4</a></li>
+            <li><a href="#">Opção 5</a></li>
+            <li><a href="#">Opção 6</a></li>
+            <li><a href="#">Opção 7</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="container">
+        <section class="form-container">
+            <h2>Cadastrar Cliente</h2>
+            <form>
+
+                <label for="nome"></label>
+                <input type="text" name="nome" placeholder="Nome">
+    
+                <label for="sobrenome"></label>
+                <input type="text" name="sobrenome" placeholder="Sobrenome">
+    
+                <label for="cpf"></label>
+                <input type="text" name="cpf" placeholder="CPF">
+    
+                <label for="data-nascimento"></label>
+                <input type="date" name="data-nascimento">
+    
+                <label for="telefone"></label>
+                <input type="text" name="telefone" placeholder="Telefone">
+    
+                <label for="email"></label>
+                <input type="email" name="email" placeholder="Email">
+    
+                <label for="senha"></label>
+                <input type="password" name="senha" placeholder="Senha">
+
+                <p class="selecionar">Selecionar foto de perfil</p>
+
+                <section class="escolher_e_nenhum">
+                    <button class="escolher_arquivo">Escolher arquivo</button>
+                    <p>Nenhum arquivo escolhido</p>
+                </section>
+
+                <label>
+                    <input type="checkbox" name="termos" required>
+                    Li e concordo com os <a href="#" target="_blank">Termos e Condições</a>
+                </label>
+
+                <button class="cadastrar">CADASTRAR</button>
+            </form>
+        </section>
+    </section>
+</body>
+</html>
