@@ -25,22 +25,17 @@
             <li><a href="#">Opção 7</a></li>
         </ul>
     </nav>
-
-
+    
     <section class="container">
         <section class="form-container">
             <h2>Cadastrar Cliente</h2>
             <form>
-
-                <label for="nome"></label>
-                <input type="text" name="nome" placeholder="Nome">
-    
-                <label for="sobrenome"></label>
-                <input type="text" name="sobrenome" placeholder="Sobrenome">
-    
                 <label for="cpf"></label>
                 <input type="text" name="cpf" placeholder="CPF">
     
+                <label for="nomeCompleto"></label>
+                <input type="text" name="nomeCompleto" placeholder="Nome Completo">
+
                 <label for="data-nascimento"></label>
                 <input type="date" name="data-nascimento">
     
@@ -54,18 +49,14 @@
                 <input type="password" name="senha" placeholder="Senha">
 
                 <p class="selecionar">Selecionar foto de perfil</p>
-
-                <section class="escolher_e_nenhum">
-                    <button class="escolher_arquivo">Escolher arquivo</button>
-                    <p>Nenhum arquivo escolhido</p>
-                </section>
-
+                    <label for="foto-perfil"></label>
+                    <input type="file" id="foto-perfil" name="foto-perfil">
+                
                 <label>
                     <input type="checkbox" name="termos" required>
-                    Li e concordo com os <a href="#" target="_blank">Termos e Condições</a>
+                        Li e concordo com os <a href="#" target="_blank">Termos e Condições</a>
                 </label>
-
-                <button class="cadastrar">CADASTRAR</button>
+                    <button class="cadastrar">CADASTRAR</button>
             </form>
         </section>
     </section>

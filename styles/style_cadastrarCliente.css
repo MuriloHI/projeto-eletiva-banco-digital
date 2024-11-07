@@ -10,7 +10,8 @@
     color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
-    height: 55px;
+    justify-content: space-around;
+    height: 70px;
 }
 
 header img {
@@ -20,6 +21,7 @@ header img {
 }
 
 header p {
+    float: left;
     font-weight: bold;
   }
 
@@ -71,9 +73,10 @@ nav ul a:hover {
 .form-container {
     background-color: rgb(255, 255, 255);
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
     max-width: 400px;
     width: 100%;
+    box-shadow: 2px 2px 5px rgb(164, 164, 164);
 
     padding-left: 110px;
     padding-right: 110px;
@@ -87,7 +90,6 @@ nav ul a:hover {
 .form-container label {
     display: block;
     margin-bottom: 6px;
-
 }
 
 .selecionar {
@@ -97,12 +99,14 @@ nav ul a:hover {
     margin-bottom: 30px;
 }
 
-.escolher_e_nenhum {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
+.form-container input[type="file"] {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
 }
+/* - Pode ser usado como outro botão, talvez.
+    Removido pois alterei o button para input type=file
+
 .escolher_arquivo {
     border-radius: 11px;
     border: 1px solid rgb(42, 40, 172);
@@ -117,17 +121,19 @@ nav ul a:hover {
     background-color: rgb(223, 223, 223);
     transition: 0.2s;
 }
-
+*/
 .form-container input[type="text"], 
 .form-container input[type="email"], 
 .form-container input[type="password"],
-.form-container input[type="date"],
-.form-container input[type="file"]
- {
+.form-container input[type="date"] {
     width: 92%;
     padding: 10px 0 10px 30px;
     margin-bottom: 20px;
     border: 1px solid rgb(204, 204, 204);
+}
+
+.form-container input[type="checkbox"] {
+    margin: 15px;
 }
 
 .cadastrar {
