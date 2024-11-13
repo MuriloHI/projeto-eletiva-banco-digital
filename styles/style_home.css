@@ -70,6 +70,11 @@ nav ul a:hover {
     background-position: center;
     width: 100%;
     height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .frase p {
@@ -79,7 +84,83 @@ nav ul a:hover {
 }
 
 button {
-    border-radius: 0%;
     padding: 15px 15px 15px 15px;
-    border: none;
+    background-color: rgb(6, 4, 80);
+    color: rgb(255, 255, 255);
 }
+
+/* SEÇÕES */
+
+/* SEÇÃO: TEXTO NA ESQUERDA E IMAGEM NA DIREITA */
+.cor_secaoTitulo1 {
+    color: #0015FF;
+}
+
+.secaoTitulo1 {
+    margin-left: 10%;
+    margin-top: 90px;
+
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    width: fit-content;  
+
+}
+
+.secao1 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.secao1 p {
+    margin-left: 10%;
+    font-size: 25px;
+    width: 50%;
+}
+
+.secao1 img {
+    width: 20%;
+    margin: auto;
+    display: block;
+}
+/* FIM SEÇÃO */
+
+
+/* SEÇÃO: IMAGEM NA ESQUERDA E TEXTO NA DIREITA */
+
+.cor_secaoTitulo2 {
+    color: #0015FF;
+}
+
+.secaoTitulo2 {
+    margin-left: 10%;
+    margin-top: 90px;
+
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    width: fit-content;  
+
+}
+
+.secao2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.secao2 p {
+    font-size: 25px;
+    width: 50%;
+    margin-right: 10%;
+}
+
+.secao2 img {
+    width: 20%;
+    margin: auto;
+    display: block;
+}
+
+/* FIM SEÇÃO 2 */
+
+/* FOOTER */
+/* */
