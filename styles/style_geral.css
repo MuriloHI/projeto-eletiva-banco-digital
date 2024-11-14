@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/* nome gamBANK */
+h1.nome-gambank {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    text-shadow: 1px 1px 2px rgb(20, 0, 94);
+}
+
+/* decorações de texto */
+.destaque_texto {
+    color: #0015FF;
+}
+
+/* botão escuro */
+button.escuro {
+    padding: 15px 15px 15px 15px;
+    background-color: rgb(6, 4, 80);
+    color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+button.escuro:hover {
+    background-color: rgb(12, 5, 98);
+    transform: scale(1.02) perspective(1px)
+}
+button.claro {
+    width: 100%;
+    background-color: rgb(42, 40, 172);
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+button.claro:hover {
+    background-color: rgb(20, 18, 145);
+    transform: scale(1.01) perspective(1px)
+}
+/* formulário */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(195,195,195);
+    padding: 40px;
+}
+
+.form-container {
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 2px 2px 5px rgb(164, 164, 164);
+
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+.form-container h2 {
+    color: rgb(42, 40, 172);
+    margin-bottom: 40px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.selecionar {
+    text-align: center;
+    color: rgb(42, 40, 172);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-container input[type="file"] {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.form-container input[type="text"], 
+.form-container input[type="email"], 
+.form-container input[type="password"],
+.form-container input[type="date"] {
+    width: 92%;
+    padding: 10px 0 10px 30px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.form-container input[type="checkbox"] {
+    margin: 15px;
+}
