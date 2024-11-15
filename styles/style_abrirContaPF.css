@@ -50,7 +50,16 @@ header a {
 nav ul a:hover {
     background-color: rgb(255, 255, 255);
 }
+
 .menu-horizontal ul li a:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(251, 119, 48);
+}
+
+section.img-banner {
+    width: 500px;
+    height: 930px;
+    background: url("../img/banner_cadastroClientePF.png") no-repeat center 0;
+    background-size: cover;
+    box-shadow: 2px 2px 5px rgb(164, 164, 164);
 }

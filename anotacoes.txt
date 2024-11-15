@@ -3,7 +3,7 @@ Telas não precisam serem separados entre cliente ou funcionário
 - CADASTROS + VISUALIZÕES
 Cliente físico (CPF, nome, dataNascimento, telefone, email, senha)
 Cliente jurídico (CNPJ, razão social, telefone, email, senha)
-Funcionário (CPF, nome, dataNascimento, n° previdencia, carteira de trabalho, telefone, email, senha)
+Funcionário (CPF, nome, dataNascimento, n° previdencia (INSS), carteira de trabalho, telefone, email, senha)
 Investimentos - cadastrar investimentos pré-definidos com cálculos também pré-definidos
 
 - FUNÇÃO

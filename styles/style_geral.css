@@ -6,14 +6,14 @@
 }
 /* nome gamBANK */
 h1.nome-gambank {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 50px;
     text-shadow: 1px 1px 2px rgb(20, 0, 94);
 }
 
 /* decorações de texto */
 .destaque_texto {
-    color: #0015FF;
+    color: rgb(59, 56, 248);
 }
 
 /* botão escuro */
@@ -28,6 +28,7 @@ button.escuro:hover {
     background-color: rgb(12, 5, 98);
     transform: scale(1.02) perspective(1px)
 }
+/* botão claro */
 button.claro {
     width: 100%;
     background-color: rgb(42, 40, 172);
@@ -42,6 +43,55 @@ button.claro:hover {
     background-color: rgb(20, 18, 145);
     transform: scale(1.01) perspective(1px)
 }
+
+/* menu dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* container do menu dropdown */
+.dropdown-conteudo {
+    /* display: none; */ /* <- tirado pra poder ir pras paginas ja que ele esta quebrado */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* itens do  menu dropdown */
+.dropdown-conteudo ul.submenu {
+    display: flex;
+    flex-direction: column;
+    margin-left: -30px;
+    text-align: left;
+}
+
+/*formatacao dos itens do menu dropdown*/
+.dropdown-conteudo ul.submenu li a {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* cor que itens do menu ficam ao passar mouse em cima */
+.dropdown-conteudo ul.submenu a:hover {
+    color: rgb(236, 90, 11);
+    background-color: rgb(216, 216, 216);
+}
+
+/* menu dropdown aparecer */
+.dropdown:hover .dropdown-conteudo ul.submenu {
+    display: block;
+}
+
+/* cor que o "abrir uma conta" ficara enquanto menu dropdown estiver ativo */
+.dropdown:hover {
+    color: rgb(251, 119, 48);
+    background-color: rgb(255, 255, 255);
+}
+
 /* formulário */
 .container {
     display: flex;
@@ -49,16 +99,15 @@ button.claro:hover {
     align-items: center;
     background-color: rgb(195,195,195);
     padding: 40px;
+    
 }
 
 .form-container {
     background-color: rgb(255, 255, 255);
     padding: 40px;
-    border-radius: 5px;
     max-width: 400px;
     width: 100%;
     box-shadow: 2px 2px 5px rgb(164, 164, 164);
-
     padding-left: 110px;
     padding-right: 110px;
 }
@@ -98,4 +147,81 @@ button.claro:hover {
 
 .form-container input[type="checkbox"] {
     margin: 15px;
+}
+
+/*rodape*/
+footer {
+    background-color: rgb(30, 31, 36);
+    padding: 60px;
+}
+
+footer section.links {
+    display: flex;
+    justify-content: space-around;
+}
+footer section p {
+    color: rgb(253, 253, 253);
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+footer section h5 {
+    color: rgb(253, 253, 253);
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/*links*/
+footer section a {
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+}
+
+footer section a:hover {
+    color: rgb(25, 105, 255);
+    cursor: pointer;
+}
+
+footer section p.contato {
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+footer section.texto-rodape {
+    border-top: 1px solid rgb(78, 78, 83);
+    margin: 50px 0 50px 0;
+    padding: 50px;
+}
+
+footer section.apps-sociais {
+    display: flex;
+}
+
+footer section.baixar-apps img {
+    height: 50px;
+    width: 150px;
+    display: block;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+footer section.redes-sociais {
+    margin-left: 100px;
+}
+
+footer section.redes-sociais a {
+    margin-right: 20px;
+}
+
+footer section.baixar-apps img:hover {
+    transform: scale(1.03) perspective(1px)
+}
+/*direitos reservados e localizacao*/
+footer section.texto-rodape p{
+    font-size: 17px;
 }
