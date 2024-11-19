@@ -100,9 +100,10 @@ nav ul a:hover {
 }
 
 .secao1 p {
-    margin-left: 10%;
+    text-indent: 30px;
     font-size: 25px;
     width: 50%;
+    margin-left: 10%;
     text-align: justify;
 }
 
@@ -113,6 +114,7 @@ nav ul a:hover {
 }
 
 .secao2 p {
+    text-indent: 30px;
     font-size: 25px;
     width: 50%;
     margin-right: 10%;

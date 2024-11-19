@@ -6,8 +6,9 @@
 }
 /* nome gamBANK */
 h1.nome-gambank {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, "Geneva", Tahoma, sans-serif;
     font-size: 50px;
+    font-weight: bold;
     text-shadow: 1px 1px 2px rgb(20, 0, 94);
 }
 
@@ -52,7 +53,7 @@ button.claro:hover {
 
 /* container do menu dropdown */
 .dropdown-conteudo {
-    /* display: none; */ /* <- tirado pra poder ir pras paginas ja que ele esta quebrado */
+    display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 150px;
@@ -64,25 +65,26 @@ button.claro:hover {
 .dropdown-conteudo ul.submenu {
     display: flex;
     flex-direction: column;
-    margin-left: -30px;
     text-align: left;
+    padding: 0;
+    list-style-type: none;
 }
 
 /*formatacao dos itens do menu dropdown*/
-.dropdown-conteudo ul.submenu li a {
+.dropdown-conteudo ul.submenu a {
     color: rgb(0, 0, 0);
-    padding: 12px 16px;
+    margin: 0;
     text-decoration: none;
     display: block;
 }
 /* cor que itens do menu ficam ao passar mouse em cima */
 .dropdown-conteudo ul.submenu a:hover {
     color: rgb(236, 90, 11);
-    background-color: rgb(216, 216, 216);
+    /* background-color: rgb(221, 221, 221); */
 }
 
 /* menu dropdown aparecer */
-.dropdown:hover .dropdown-conteudo ul.submenu {
+.dropdown:hover .dropdown-conteudo {
     display: block;
 }
 
@@ -93,7 +95,7 @@ button.claro:hover {
 }
 
 /* formulário */
-.container {
+.container-tela {
     display: flex;
     justify-content: center;
     align-items: center;
