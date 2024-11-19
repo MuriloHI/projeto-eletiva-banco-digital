@@ -120,6 +120,12 @@ nav ul a:hover {
     margin-right: 10%;
     text-align: justify;
 }
+section.secao1 img, section.secao2 img {
+    width: 26%;
+}
+section.secao2:last-child {
+    margin-bottom: 100px;
+}
 
 /* FIM SEÇÃO */
 
