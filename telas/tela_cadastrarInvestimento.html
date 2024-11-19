@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="../styles/style_cadastrarFuncionario.css">
+    <link rel="stylesheet" href="../styles/style_cadastrarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
 
 </head>
@@ -11,14 +11,14 @@
     <header class="header">
         <img src="../img/logo.png" alt="logo da gamBANK">
         <h1 class="nome-gambank">gamBANK</h1>
-        <p><a href="#">Sair</a></p>
+        <p><a href="#">Login</a></p>
     </header>
 
     <nav class="menu-horizontal">
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="tela_abrirContaPF.html">Abrir uma conta</a></li>
-            <li><a href="tela_cadastrarInvestimento.html">Cadastrar Investimento</a></li>
+            <li><a href="#">Cadastrar Investimento</a></li>
             <li><a href="#">Opção 3</a></li>
             <li><a href="#">Opção 4</a></li>
             <li><a href="#">Opção 5</a></li>
@@ -29,16 +29,16 @@
     
     <section class="container">
         <section class="form-container">
-            <h2>Cadastrar Funcionário</h2>
-            <form method="POST" action="../php/processamento.php">
+            <h2>Cadastrar Investimento</h2>
+            <form>
                 <label for="cpf">CPF</label>
                 <input type="text" name="cpf" placeholder="Digite o CPF">
     
                 <label for="nomeCompleto">Nome</label>
                 <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
 
-                <label for="dt-nascimento">Data de Nascimento</label>
-                <input type="date" name="dt-nascimento">
+                <label for="data-nascimento">Data de Nascimento</label>
+                <input type="date" name="data-nascimento">
     
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" placeholder="Digite o telefone">
@@ -49,17 +49,20 @@
                 <label for="inss">&#8470 de INSS</label>
                 <input type="text" name="inss" placeholder="Digite o &#8470 do INSS">
     
+                <label for="tipo-conta">Tipo de Conta</label>
+                <select name="tipo-conta" id="tipo-conta">
+                    <option value="digital">Conta Digital</option>
+                    <option value="fisica">Conta Física</option>
+                </select>
+
+                <label for="valor-investimento">Valor do Investimento</label>
+                <input type="number" name="valor-investimento" placeholder="Digite o valor do investimento" step="0.01">
                 <!-- <label for="senha">Senha</label>
                 <input type="password" name="senha" placeholder="Digite sua senha">
 
                 <label for="senha-confirmacao">Confirme sua senha</label>
                 <input type="password" name="senha-confirmacao" placeholder="Confirme sua senha"> -->
 
-                <p class="selecionar">Selecionar foto de perfil</p>
-                    <label for="foto-perfil"></label>
-                    <input type="file" id="foto-perfil" name="foto-perfil">
-
-                </label>
                     <button class="claro">CADASTRAR</button>
             </form>
         </section>
