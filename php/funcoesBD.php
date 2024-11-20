@@ -58,4 +58,27 @@ function retornarInvestimento(){
     $listaInv = mysqli_query($conexao, $query);
     return ($listaInv);
 }
+
+
+function redefinirSenha($email, $novaSenha) {
+    $conexao = conectarBD(); 
+
+    $hashSenha = password_hash($novaSenha, PASSWORD_DEFAULT);
+
+    $queryPF = "UPDATE clientePF SET senha = '$hashSenha' WHERE email = '$email'";
+    $queryPJ = "UPDATE clientePJ SET senha = '$hashSenha' WHERE email = '$email'";
+
+    $resultadoPF = mysqli_query($conexao, $queryPF);
+    if (mysqli_affected_rows($conexao) > 0) {
+        return true;
+    }
+
+    $resultadoPJ = mysqli_query($conexao, $queryPJ);
+    if (mysqli_affected_rows($conexao) > 0) {
+        return true;
+    }
+
+    return false;
+}
+
 ?>

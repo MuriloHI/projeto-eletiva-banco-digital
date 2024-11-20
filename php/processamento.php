@@ -74,6 +74,8 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
 
   header('Location: ../telas/tela_cadastrarInvestimento.php')
 
+
+  //Valor do investimento
   function calcularRetornoInvestimento($valorInvestido, $tipoConta) {
     $taxas = [
         'basico' => 0.02,
@@ -88,6 +90,24 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
 
     $retorno = $valorInvestido * $taxas[$tipoConta];
     return number_format($retorno, 2, ',', '.');
+
+
+    // Redefinir Senha
+
+    if (!empty($_POST['email']) && !empty($_POST['nova-senha']) && !empty($_POST['confirmacao-senha'])) {
+      $email = $_POST['email'];
+      $novaSenha = $_POST['nova-senha'];
+      $confirmacaoSenha = $_POST['confirmacao-senha'];
+  
+      if ($novaSenha === $confirmacaoSenha) {
+          redefinirSenha($email, $novaSenha);
+          header('Location: ../telas/tela_sucessoRedefinirSenha.php');
+      } else {
+          header('Location: ../telas/tela_redefinirSenha.php?erro=senhas-nao-conferem');
+      }
+      die();
+  }
+  
 
   
   die();
