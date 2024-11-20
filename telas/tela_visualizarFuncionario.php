@@ -2,9 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizar ContaPJ</title>
+    <title>Visualizar Funcionário</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_visualizarContaPJ.css">
+    <link rel="stylesheet" href="../styles/style_visualizarFuncionario.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
 
 </head>
@@ -35,70 +35,25 @@
             <li><a href="tela_cadastrarFuncionario.html">Cadastrar Funcionário</a></li>
         </ul>
     </nav>
+
+
+    <?php
+    $listaFunc = retornarFuncionario();
+    while($func = mysqli_fetch_assoc($listaFunc)){
+    echo  "<section class='secao_inteira_visualizarFuncionario'>";
+    echo  "<section class='card'>";
+    echo  "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";
+    echo   "<p>" . $func["cpf"] . "</p>";
+    echo   "<p>" . $func["nomeCompleto"] . "</p>";
+    echo   "<p>" . $func["dt-nascimento"] . "</p>";
+    echo   "<p>" . $func["telefone"] . "</p>";
+    echo   "<p>" . $func["email"] . "</p>";
+    echo   "<p>" . $func["inss"] . "</p>";
+    echo   "</section>";
+    echo   "</section>";
+    }
+    ?>
     
-    <section class="secao_inteira_visualizarContaPJ">
-        <section class="card">
-          <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-          <p><strong>CNPJ:</strong></p>
-          <p><strong>Razão Social:</strong></p>
-          <p><strong>Telefone:</strong></p>
-          <p><strong>E-mail:</strong></p>
-        </section>
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-        
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CNPJ:</strong></p>
-            <p><strong>Razão Social:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-          </section>
-    </section>
     
     <!-- FOOTER -->
     <footer>

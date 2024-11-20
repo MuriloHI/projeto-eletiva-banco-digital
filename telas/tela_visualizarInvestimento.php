@@ -2,9 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>gamBANK - Investimentos</title>
+    <title>Visualizar Investimento</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_cadastrarInvestimento.css">
+    <link rel="stylesheet" href="../styles/style_visualizarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
 
 </head>
@@ -36,43 +36,29 @@
         </ul>
     </nav>
     
-    <section class="container-tela">
-        <section class="form-container">
-            <h2>Cadastrar Investimento</h2>
-            <form>
-                <label for="cpf">CPF</label>
-                <input type="text" name="cpf" placeholder="Digite o CPF">
+    <?php
+    $listaFunc = retornarFuncionario();
+    while($func = mysqli_fetch_assoc($listaFunc)){
+    echo "<section class='secao_inteira_visualizarInvestimento'>";
+    echo "<section class='card'>";
+    echo "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";
+    echo  "<p>" . $func["cpf"] . "</p>";
+    echo  "<p>" . $func["nomeCompleto"] . "</p>";
+    echo  "<p>" . $func["dt-nascimento"] . "</p>";
+    echo  "<p>" . $func["telefone"] . "</p>";
+    echo  "<p>" . $func["email"] . "</p>";
+    echo  "<p>" . $func["tipo-conta"] . "</p>";
+    echo  "<p>" . $func["valor-investimento"]" . </p>";
+    $retorno = calcularRetornoInvestimento($func["valor-investimento"], $func["tipo-conta"]);
+    echo  "<p class='retono_em_azul'> RETORNO: R$" . $retorno .  "</p>";
+    echo  "</section>";
+    echo   "</section>";
+    }
+    ?>
+        
+      </section>
+      
     
-                <label for="nomeCompleto">Nome</label>
-                <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
-
-                <label for="data-nascimento">Data de Nascimento</label>
-                <input type="date" name="data-nascimento">
-    
-                <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" placeholder="Digite o telefone">
-    
-                <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Digite o e-mail">
-
-                <label for="tipo-conta">Tipo de Conta</label>
-                <select name="tipo-conta" id="tipo-conta">
-                    <option value="digital">Conta Digital</option>
-                    <option value="fisica">Conta Física</option>
-                </select>
-
-                <label for="valor-investimento">Valor do Investimento</label>
-                <input type="number" name="valor-investimento" placeholder="Digite o valor do investimento" step="0.01">
-                <!-- <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha">
-
-                <label for="senha-confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha-confirmacao" placeholder="Confirme sua senha"> -->
-
-                    <button class="claro">CADASTRAR</button>
-            </form>
-        </section>
-    </section>
     <!-- FOOTER -->
     <footer>
         <section class="links">

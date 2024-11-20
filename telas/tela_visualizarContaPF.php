@@ -2,9 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizar Funcionário</title>
+    <title>Visualizar ContaPJ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_visualizarFuncionario.css">
+    <link rel="stylesheet" href="../styles/style_visualizarContaPF.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
 
 </head>
@@ -35,85 +35,24 @@
             <li><a href="tela_cadastrarFuncionario.html">Cadastrar Funcionário</a></li>
         </ul>
     </nav>
-    <section class="secao_inteira_visualizarFuncionario">
-        <section class="card">
-          <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-          <p><strong>CPF:</strong></p>
-          <p><strong>Nome:</strong></p>
-          <p><strong>Data de Nascimento:</strong></p>
-          <p><strong>Telefone:</strong></p>
-          <p><strong>E-mail:</strong></p>
-          <p><strong>Nº INSS:</strong></p>
-        </section>
-        <section class="card">
-          <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-          <p><strong>CPF:</strong></p>
-          <p><strong>Nome:</strong></p>
-          <p><strong>Data de Nascimento:</strong></p>
-          <p><strong>Telefone:</strong></p>
-          <p><strong>E-mail:</strong></p>
-          <p><strong>Nº INSS:</strong></p>
-        </section>
-        <section class="card">
-          <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-          <p><strong>CPF:</strong></p>
-          <p><strong>Nome:</strong></p>
-          <p><strong>Data de Nascimento:</strong></p>
-          <p><strong>Telefone:</strong></p>
-          <p><strong>E-mail:</strong></p>
-          <p><strong>Nº INSS:</strong></p>
-        </section>
+    
+    <?php
+        $listaContasPF = retornarContaPF();
+        while($clientePF = mysqli_fetch_assoc($listaContasPF)){
+
         
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-            <p><strong>Nº INSS:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-            <p><strong>Nº INSS:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-            <p><strong>Nº INSS:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-            <p><strong>Nº INSS:</strong></p>
-          </section>
-
-          <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-            <p><strong>Nº INSS:</strong></p>
-          </section>
-    </section>
+        echo "<section class='secao_inteira_visualizarContaPF'>";
+        echo "<section class='card'>";
+        echo "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";          
+        echo  "<p>" . $clientePF["cpf"] . "</p>";
+        echo  "<p>" . $clientePF["nomeCompleto"] . "</p>";
+        echo  "<p>" . $clientePF["dt-nascimento"] . "</p>";
+        echo  "<p>" . $clientePF["telefone"] . "</p>";
+        echo  "<p>" . $clientePF["email"] . "</p>";
+        echo "</section>";
+        echo   "</section>";
+    }
+    ?>
     
     <!-- FOOTER -->
     <footer>

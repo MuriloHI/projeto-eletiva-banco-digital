@@ -58,6 +58,38 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
   inserirFuncionario($cpfFunc, $nomeFunc, $dataNFunc, $telefoneFunc, $emailFunc, $inss)
   
   header('Location: ../telas/tela_cadastrarFuncionario.php')
+  
+  //Cadastrar Investimentos
+  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo-conta']) && !empty($_POST['valor-investimento']))
+
+  $cpf = $_POST['cpf'];
+  $nomeCompleto = $_POST['nomeCompleto'];
+  $dtNascimento = $_POST['dt-nascimento'];
+  $telefone = $_POST['telefone'];
+  $email = $_POST['email'];
+  $tipoConta = $_POST['tipo-conta'];
+  $vlInvest = $_POST['valor-investimento'];
+
+  inserirInvestimento($cpf, $nomeCompleto, $dtNascimento, $telefone, $email, $tipoConta, $vlInvest)
+
+  header('Location: ../telas/tela_cadastrarInvestimento.php')
+
+  function calcularRetornoInvestimento($valorInvestido, $tipoConta) {
+    $taxas = [
+        'basico' => 0.02,
+        'prata' => 0.03, 
+        'ouro' => 0.04, 
+        'diamante' => 0.05 
+    ];
+
+    if (!isset($taxas[$tipoConta])) {
+        return "Tipo de conta inválido";
+    }
+
+    $retorno = $valorInvestido * $taxas[$tipoConta];
+    return number_format($retorno, 2, ',', '.');
+
+  
   die();
 }
 

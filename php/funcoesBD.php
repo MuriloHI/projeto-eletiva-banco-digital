@@ -24,5 +24,38 @@ function inserirFuncionario($cpfFunc, $nomeFunc, $dataNFunc, $telefoneFunc, $ema
     mysqli_query($conexao, $query);
 }
 
+function inserirInvestimento($cpf, $nomeCompleto, $dtNascimento, $telefone, $email, $tipoConta, $vlInvest)
+{
+    $conexao = conectarBD(); // canal de comunicação entre APP e BD
+    $query = "INSERT INTO investimento(cpf, nomeCompleto, dt-nascimento, telefone, email, tipo-conta, valor-investimento) VALUES('$cpf', '$nomeCompleto', '$dtNascimento', '$telefone', '$email', '$tipoConta', '$vlInvest')"; // query que será aplicada no SGBD
+    mysqli_query($conexao, $query);
+}
 
+function retornarContaPF(){
+    $conexao = conectarBD(); //canal de comunicação entre APP e BD
+    $query = "SELECT * FROM clientePF";
+    $listaContasPF = mysqli_query($conexao, $query);
+    return ($listaContasPF);
+}
+
+function retornarContaPJ(){
+    $conexao = conectarBD(); //canal de comunicação entre APP e BD
+    $query = "SELECT * FROM clientePJ";
+    $listaContasPJ = mysqli_query($conexao, $query);
+    return ($listaContasPJ);
+}
+
+function retornarFuncionario(){
+    $conexao = conectarBD(); //canal de comunicação entre APP e BD
+    $query = "SELECT * FROM funcionario";
+    $listaFunc = mysqli_query($conexao, $query);
+    return ($listaFunc);
+}
+
+function retornarInvestimento(){
+    $conexao = conectarBD(); //canal de comunicação entre APP e BD
+    $query = "SELECT * FROM investimento";
+    $listaInv = mysqli_query($conexao, $query);
+    return ($listaInv);
+}
 ?>

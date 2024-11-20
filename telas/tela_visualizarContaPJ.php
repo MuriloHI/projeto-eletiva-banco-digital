@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Visualizar ContaPJ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_visualizarContaPF.css">
+    <link rel="stylesheet" href="../styles/style_visualizarContaPJ.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
 
 </head>
@@ -35,80 +35,23 @@
             <li><a href="tela_cadastrarFuncionario.html">Cadastrar Funcionário</a></li>
         </ul>
     </nav>
-    
-    <section class="secao_inteira_visualizarContaPF">
-        <section class="card">
-          <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-          <p><strong>CPF:</strong></p>
-          <p><strong>Nome:</strong></p>
-          <p><strong>Data de Nascimento:</strong></p>
-          <p><strong>Telefone:</strong></p>
-          <p><strong>E-mail:</strong></p>
-        </section>
 
-       <section class="card">
-          <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-          <p><strong>CPF:</strong></p>
-          <p><strong>Nome:</strong></p>
-          <p><strong>Data de Nascimento:</strong></p>
-          <p><strong>Telefone:</strong></p>
-          <p><strong>E-mail:</strong></p>
-        </section>
-        
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-        </section>
-        
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-        </section>
-
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-        </section>
-
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-        </section>
-
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-        </section>
-
-        <section class="card">
-            <img class="iconeCliente" src="../img/cliente_foto.png" alt="Avatar do Usuário">
-            <p><strong>CPF:</strong></p>
-            <p><strong>Nome:</strong></p>
-            <p><strong>Data de Nascimento:</strong></p>
-            <p><strong>Telefone:</strong></p>
-            <p><strong>E-mail:</strong></p>
-        </section>
-    </section>
+    ]
+    <?php
+    $listaContasPJ = retornarContaPF();
+    while($clientePJ = mysqli_fetch_assoc($listaContasPJ)){
+        echo  "<section class='secao_inteira_visualizarContaPJ'>";
+        echo  "<section class='card'>";
+        echo  "<img class='iconeCliente' src=''../img/cliente_foto.png' alt='Avatar do Usuário'>";
+        echo  "<p>" . $clientePJ["cnpj"] . "</p>";
+        echo  "<p>" . $clientePJ["nomeCompleto"] . "</p>";
+        echo  "<p>" . $clientePJ["telefone"] . "</p>";
+        echo  "<p>" . $clientePJ["email"] . "</p>";
+        echo  "</section>";
+        echo   "</section>";
+    }
+    ?>
+       
     
     <!-- FOOTER -->
     <footer>
