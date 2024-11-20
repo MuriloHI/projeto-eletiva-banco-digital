@@ -2,10 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem vindo ao gamBANK!</title>
+    <title>Visualizar Investimento</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_abrirContaPJ.css">
+    <link rel="stylesheet" href="../styles/style_visualizarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
 
 </head>
@@ -37,44 +36,8 @@
         </ul>
     </nav>
     
-    <section class="container-tela">
-        <section class="img-banner">
-        </section>
-        <section class="form-container">
-            <h2>Abrir conta PJ</h2>
-            <form method="POST" action="../php/processamento.php">
-                <label for="cnpj">CNPJ</label>
-                <input type="text" name="cpf" placeholder="Digite o CNPJ">
     
-                <label for="nomeCompleto">Razão Social</label>
-                <input type="text" name="nomeCompleto" placeholder="Digite a razão social da empresa">
     
-                <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" placeholder="Digite o telefone">
-    
-                <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Digite o e-mail">
-    
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite a senha">
-
-                <label for="senha-confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha-confirmacao" placeholder="Confirme a senha">
-
-                <!--Verificar se possível criar banco de dados para essa parte (imagens)-->
-                <!-- <p class="selecionar">Selecionar foto de perfil</p>
-                    <label for="foto-perfil"></label>
-                    <input type="file" id="foto-perfil" name="foto-perfil"> -->
-                    
-                <label>
-                    <input type="checkbox" name="termos" required>
-                        Li e concordo com os <a href="#" target="_blank">Termos e Condições</a>
-                </label>
-                    <button class="claro">CONTINUAR</button>
-            </form>
-        </section>
-    </section>
-
     <!-- FOOTER -->
     <footer>
         <section class="links">

@@ -18,17 +18,25 @@
     <nav class="menu-horizontal">
         <ul>
             <li><a href="home.html">Home</a></li>
-            <li><a href="tela_abrirContaPF.html">Abrir uma conta</a></li>
-            <li><a href="#">Cadastrar Investimento</a></li>
-            <li><a href="#">Opção 3</a></li>
-            <li><a href="#">Opção 4</a></li>
-            <li><a href="#">Opção 5</a></li>
-            <li><a href="#">Opção 6</a></li>
+            <li class="dropdown">
+                <a href="#">Abrir uma conta</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_abrirContaPF.html">Conta Digital</a></li>
+                        <li><a href="tela_abrirContaPJ.html">Conta PJ</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li><a href="tela_cadastrarInvestimento.html">Cadastrar Investimento</a></li>
+            <li><a href="tela_visualizarInvestimento.html">Visualizar Investimento</a></li>
+            <li><a href="tela_visualizarFuncionario.html">Visualizar Funcionário</a></li>
+            <li><a href="tela_visualizarContaPJ.html">Visualizar ContaPJ</a></li>
+            <li><a href="tela_visualizarContaPF.html">Visualizar ContaPF</a></li>
             <li><a href="tela_cadastrarFuncionario.html">Área administrador</a></li>
         </ul>
     </nav>
     
-    <section class="container">
+    <section class="container-tela">
         <section class="form-container">
             <h2>Cadastrar Investimento</h2>
             <form>
