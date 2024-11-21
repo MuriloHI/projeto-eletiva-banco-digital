@@ -46,8 +46,8 @@
                 <label for="nomeCompleto">Nome</label>
                 <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
 
-                <label for="data-nascimento">Data de Nascimento</label>
-                <input type="date" name="dt-nascimento">
+                <label for="dt-nascimento">Data de Nascimento</label>
+                <input type="date" name="dt_nascimento">
     
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" placeholder="Digite o telefone">
@@ -55,14 +55,16 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" placeholder="Digite o e-mail">
 
-                <label for="tipo-conta">Tipo de Conta</label>
-                <select name="tipo-conta" id="tipo-conta">
-                    <option value="digital">Conta Digital</option>
-                    <option value="fisica">Conta Física</option>
+                <label for="tipo_conta">Tipo de Conta</label>
+                <select name="tipo_conta" id="tipo_conta">
+                    <option value="basico">Básico</option>
+                    <option value="prata">Prata</option>
+                    <option value="ouro">Ouro</option>
+                    <option value="diamanete">Diamante</option>
                 </select>
 
-                <label for="valor-investimento">Valor do Investimento</label>
-                <input type="number" name="valor-investimento" placeholder="Digite o valor do investimento" step="0.01">
+                <label for="valor_investimento">Valor do Investimento</label>
+                <input type="number" name="valor_investimento" placeholder="Digite o valor do investimento" step="0.01">
                 <!-- <label for="senha">Senha</label>
                 <input type="password" name="senha" placeholder="Digite sua senha">
 

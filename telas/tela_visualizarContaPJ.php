@@ -1,3 +1,7 @@
+<?php
+require_once "../php/funcoesBD.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,7 +42,7 @@
 
     ]
     <?php
-    $listaContasPJ = retornarContaPF();
+    $listaContasPJ = retornarContaPJ();
     while($clientePJ = mysqli_fetch_assoc($listaContasPJ)){
         echo  "<section class='secao_inteira_visualizarContaPJ'>";
         echo  "<section class='card'>";

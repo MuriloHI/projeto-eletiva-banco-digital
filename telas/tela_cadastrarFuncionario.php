@@ -46,8 +46,8 @@
                 <label for="nomeCompleto">Nome</label>
                 <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
 
-                <label for="dt-nascimento">Data de Nascimento</label>
-                <input type="date" name="dt-nascimento">
+                <label for="dt_nascimento">Data de Nascimento</label>
+                <input type="date" name="dt_nascimento">
     
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" placeholder="Digite o telefone">

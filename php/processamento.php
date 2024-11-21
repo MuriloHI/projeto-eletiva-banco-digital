@@ -5,21 +5,21 @@ require_once "funcoesBD.php";
 
 //Abrir Conta de Pessoa Física
 if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && 
-   !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && 
+   !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && 
    !empty($_POST['email']) && !empty($_POST['senha']) &&
-   !empty($_POST['senha-confirmacao'])){
+   !empty($_POST['senha_confirmacao'])){
 
    $cpf = $_POST['cpf'];
    $nomePF = $_POST['nomeCompleto'];
-   $dataNPF = $_POST['dt-nascimento'];
+   $dataNPF = $_POST['dt_nascimento'];
    $telefonePF = $_POST['telefone'];
    $emailPF = $_POST['email'];
    $senhaPF = $_POST['senha'];
-   $confirmSenhaPF = $_POST['senha-confirmacao'];
+   $confirmSenhaPF = $_POST['senha_confirmacao'];
 
   
   //chamada da função para BD
-  abrirContaPF($cpf, $nomePF, $dataNPF, $telefonePF, $emailPF, $senhaPF, $confirmsenhaPF);
+  abrirContaPF($cpf, $nomePF, $dataNPF, $telefonePF, $emailPF, $senhaPF, $confirmSenhaPF);
 
   header('Location: ../telas/tela_abrirContaPF.php');
   die();
@@ -28,14 +28,14 @@ if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) &&
 
 //Abrir Conta de Pessoa Jurídica
 if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) && 
-   !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['senha-confirmacao'])){
+   !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['senha_confirmacao'])){
 
    $cnpj = $_POST['cnpj'];
    $razaosocial = $_POST['nomeCompleto'];
    $telefonePJ = $_POST['telefone'];
    $emailPJ = $_POST['email'];
    $senhaPJ = $_POST['senha'];
-   $confirmSenhaPJ = $_POST['senha-confirmacao'];
+   $confirmSenhaPJ = $_POST['senha_confirmacao'];
 
 
   abrirContaPJ($cnpj, $razaosocial, $telefonePJ, $emailPJ, $senhaPJ, $confirmSenhaPJ);
@@ -47,17 +47,17 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
   
   
   //Cadastrar Funcionário
-  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['inss'])){
+  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['inss'])){
 
   $cpfFunc = $_POST['cpf'];
   $nomeFunc = $_POST['nomeCompleto'];
-  $dataNFunc = $_POST['dt-nascimento'];
+  $dataNFunc = $_POST['dt_nascimento'];
   $telefoneFunc = $_POST['telefone'];
   $emailFunc = $_POST['email'];
   $inss = $_POST['inss'];
 
 
-  inserirFuncionario($cpfFunc, $nomeFunc, $dataNFunc, $telefoneFunc, $emailFunc, $inss)
+  inserirFuncionario($cpfFunc, $nomeFunc, $dataNFunc, $telefoneFunc, $emailFunc, $inss);
   
   header('Location: ../telas/tela_cadastrarFuncionario.php');
   die();
@@ -65,17 +65,17 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
 
 
   //Cadastrar Investimentos
-  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo-conta']) && !empty($_POST['valor-investimento'])){
+  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo_conta']) && !empty($_POST['valor_investimento'])){
 
   $cpf = $_POST['cpf'];
   $nomeCompleto = $_POST['nomeCompleto'];
-  $dtNascimento = $_POST['dt-nascimento'];
+  $dtNascimento = $_POST['dt_nascimento'];
   $telefone = $_POST['telefone'];
   $email = $_POST['email'];
-  $tipoConta = $_POST['tipo-conta'];
-  $vlInvest = $_POST['valor-investimento'];
+  $tipoConta = $_POST['tipo_conta'];
+  $vlInvest = $_POST['valor_investimento'];
 
-  inserirInvestimento($cpf, $nomeCompleto, $dtNascimento, $telefone, $email, $tipoConta, $vlInvest)
+  inserirInvestimento($cpf, $nomeCompleto, $dtNascimento, $telefone, $email, $tipoConta, $vlInvest);
 
   header('Location: ../telas/tela_cadastrarInvestimento.php');
 
@@ -83,31 +83,15 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
   }
 
   //Valor do investimento
-  function calcularRetornoInvestimento($valorInvestido, $tipoConta) {
-    $taxas = [
-        'basico' => 0.02,
-        'prata' => 0.03, 
-        'ouro' => 0.04, 
-        'diamante' => 0.05 
-    ];
-
-    if (!isset($taxas[$tipoConta])) {
-        return "Tipo de conta inválido";
-    }
-
-    $retorno = $valorInvestido * $taxas[$tipoConta];
-    return number_format($retorno, 2, ',', '.');
-
-    die();
-  }
+  
 
 
     // Redefinir Senha
 
-    if (!empty($_POST['email']) && !empty($_POST['nova-senha']) && !empty($_POST['confirmacao-senha'])) {
+    if (!empty($_POST['email']) && !empty($_POST['nova_senha']) && !empty($_POST['confirmacao_senha'])) {
       $email = $_POST['email'];
-      $novaSenha = $_POST['nova-senha'];
-      $confirmacaoSenha = $_POST['confirmacao-senha'];
+      $novaSenha = $_POST['nova_senha'];
+      $confirmacaoSenha = $_POST['confirmacao_senha'];
   
       if ($novaSenha === $confirmacaoSenha) {
           redefinirSenha($email, $novaSenha);

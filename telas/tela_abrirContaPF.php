@@ -49,8 +49,8 @@
                 <label for="nomeCompleto">Nome</label>
                 <input type="text" name="nomeCompleto" placeholder="Digite seu nome completo">
 
-                <label for="dt-nascimento">Data de Nascimento</label>
-                <input type="date" name="dt-nascimento">
+                <label for="dt_nascimento">Data de Nascimento</label>
+                <input type="date" name="dt_nascimento">
     
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" placeholder="Digite seu telefone">
@@ -62,7 +62,7 @@
                 <input type="password" name="senha" placeholder="Digite sua senha">
 
                 <label for="senha-confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha-confirmacao" placeholder="Confirme sua senha">
+                <input type="password" name="senha_confirmacao" placeholder="Confirme sua senha">
 
                 <!--Verificar se possível criar banco de dados para essa parte (imagens)-->
                 <p class="selecionar">Selecionar foto de perfil</p>

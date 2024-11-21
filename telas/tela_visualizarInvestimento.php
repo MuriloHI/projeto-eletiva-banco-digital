@@ -1,3 +1,7 @@
+<?php
+require_once "../php/funcoesBD.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,19 +41,19 @@
     </nav>
     
     <?php
-    $listaFunc = retornarFuncionario();
-    while($func = mysqli_fetch_assoc($listaFunc)){
+    $listaInv = retornarInvestimento();
+    while($inv = mysqli_fetch_assoc($listaInv)){
     echo "<section class='secao_inteira_visualizarInvestimento'>";
     echo "<section class='card'>";
     echo "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";
-    echo  "<p>" . $func["cpf"] . "</p>";
-    echo  "<p>" . $func["nomeCompleto"] . "</p>";
-    echo  "<p>" . $func["dt-nascimento"] . "</p>";
-    echo  "<p>" . $func["telefone"] . "</p>";
-    echo  "<p>" . $func["email"] . "</p>";
-    echo  "<p>" . $func["tipo-conta"] . "</p>";
-    echo  "<p>" . $func["valor-investimento"] . "</p>";
-    $retorno = calcularRetornoInvestimento($func["valor-investimento"], $func["tipo-conta"]);
+    echo  "<p>" . $inv["cpf"] . "</p>";
+    echo  "<p>" . $inv["nomeCompleto"] . "</p>";
+    echo  "<p>" . $inv["dt_nascimento"] . "</p>";
+    echo  "<p>" . $inv["telefone"] . "</p>";
+    echo  "<p>" . $inv["email"] . "</p>";
+    echo  "<p>" . $inv["tipo_conta"] . "</p>";
+    echo  "<p>" . $inv["valor_investimento"] . "</p>";
+    $retorno = calcularRetornoInvestimento($inv["valor_investimento"], $inv["tipo_conta"]);
     echo  "<p class='retono_em_azul'> RETORNO: R$" . $retorno .  "</p>";
     echo  "</section>";
     echo   "</section>";

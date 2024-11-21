@@ -59,7 +59,7 @@
                 <input type="password" name="senha" placeholder="Digite a senha">
 
                 <label for="senha-confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha-confirmacao" placeholder="Confirme a senha">
+                <input type="password" name="senha_confirmacao" placeholder="Confirme a senha">
 
                 <!--Verificar se possível criar banco de dados para essa parte (imagens)-->
                 <!-- <p class="selecionar">Selecionar foto de perfil</p>

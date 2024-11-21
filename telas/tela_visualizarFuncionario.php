@@ -1,3 +1,7 @@
+<?php
+require_once "../php/funcoesBD.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,7 +49,7 @@
     echo  "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";
     echo   "<p>" . $func["cpf"] . "</p>";
     echo   "<p>" . $func["nomeCompleto"] . "</p>";
-    echo   "<p>" . $func["dt-nascimento"] . "</p>";
+    echo   "<p>" . $func["dt_nascimento"] . "</p>";
     echo   "<p>" . $func["telefone"] . "</p>";
     echo   "<p>" . $func["email"] . "</p>";
     echo   "<p>" . $func["inss"] . "</p>";
