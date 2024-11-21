@@ -41,7 +41,7 @@
         <section class="texto-imagem"> 
             <p>Confiabilidade para o seu futuro financeiro</p>
         </section>
-        <a href="tela_abrirContaPF.html"><button class="escuro">COMEÇE AQUI</button></a>
+        <a href="tela_abrirContaPF.php"><button class="escuro">COMEÇE AQUI</button></a>
     </section>
 
     <!-- BOOTSTRAP --> 
