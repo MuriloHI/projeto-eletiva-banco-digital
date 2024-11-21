@@ -6,18 +6,7 @@ require_once "funcoesBD.php";
 
 //Fazer Login
 
-if(!empty($_POST['email']) && !empty($_POST['senha'])){
 
-   $email = $_POST['email'];
-   $senha = $_POST['senha'];
-
-  
-  //chamada da função para BD
-  fazerLogin($email, $senha);
-
-  header('Location: ../telas/tela_login.php');
-  die();
-}
 
 
 //Redefinição da Senha
@@ -50,7 +39,7 @@ if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) &&
 
 
 //Abrir Conta de Pessoa Jurídica
-if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) && 
+else if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) && 
    !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['senha_confirmacao'])){
 
    $cnpj = $_POST['cnpj'];
@@ -70,7 +59,7 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
   
   
   //Cadastrar Funcionário
-  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['inss'])){
+  else if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['inss'])){
 
   $cpfFunc = $_POST['cpf'];
   $nomeFunc = $_POST['nomeCompleto'];
@@ -88,7 +77,7 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
 
 
   //Cadastrar Investimentos
-  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo_conta']) && !empty($_POST['valor_investimento'])){
+  else if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo_conta']) && !empty($_POST['valor_investimento'])){
 
   $cpf = $_POST['cpf'];
   $nomeCompleto = $_POST['nomeCompleto'];
@@ -109,16 +98,33 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
   
 
 
-    // Redefinir Senha
+    // Login
 
-    if (!empty($_POST['email']) && !empty($_POST['nova_senha']) && !empty($_POST['confirmacao_senha'])) {
+    else if(!empty($_POST['email']) && !empty($_POST['senha'])){
+
+      $email = $_POST['email'];
+      $senha = $_POST['senha'];
+   
+     
+     //chamada da função para BD
+     fazerLogin($email, $senha);
+   
+     header('Location: ../telas/home.php');
+     die();
+   }
+
+
+   // Redefinir Senha
+
+
+    else if (!empty($_POST['email']) && !empty($_POST['nova_senha']) && !empty($_POST['confirmacao_senha'])) {
       $email = $_POST['email'];
       $novaSenha = $_POST['nova_senha'];
       $confirmacaoSenha = $_POST['confirmacao_senha'];
   
       if ($novaSenha === $confirmacaoSenha) {
           redefinirSenha($email, $novaSenha);
-          header('Location: ../telas/tela_sucessoRedefinirSenha.php');
+          header('Location: ../telas/tela_login.php');
       } else {
           header('Location: ../telas/tela_redefinirSenha.php?erro=senhas-nao-conferem');
       }
