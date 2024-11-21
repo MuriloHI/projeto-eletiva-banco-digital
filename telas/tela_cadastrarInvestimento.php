@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
     <link rel="stylesheet" href="../styles/style_cadastrarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
+    <script type="text/javascript" src="../script_selecaoInvestimento.js"></script>
 
 </head>
 <body>
@@ -22,17 +23,38 @@
                 <a href="#">Abrir uma conta</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.php">Conta Digital</a></li>
-                        <li><a href="tela_abrirContaPJ.php">Conta PJ</a></li>
+                        <li><a href="tela_abrirContaPF.php">Conta Digital (PF)</a></li>
+                        <li><a href="tela_abrirContaPJ.php">Conta Empresarial (PJ)</a></li>
                     </ul>
                 </section>
             </li>
-            <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
-            <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
-            <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
-            <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
-            <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
-            <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+            <li class="dropdown">
+                <a href="#">Investimentos</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
+                        <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contas gamBANK</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
+                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Funcionários</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
+                    </ul>
+                </section>
+            </li>
         </ul>
     </nav>
     
@@ -46,7 +68,7 @@
                 <label for="nomeCompleto">Nome</label>
                 <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
 
-                <label for="dt-nascimento">Data de Nascimento</label>
+                <label for="dt_nascimento">Data de Nascimento</label>
                 <input type="date" name="dt_nascimento">
     
                 <label for="telefone">Telefone</label>
@@ -57,21 +79,18 @@
 
                 <label for="tipo_conta">Tipo de Conta</label>
                 <select name="tipo_conta" id="tipo_conta">
-                    <option value="basico">Básico</option>
-                    <option value="prata">Prata</option>
-                    <option value="ouro">Ouro</option>
-                    <option value="diamante">Diamante</option>
+                    <option id="Basico" value="basico" onclick="selecionarInvestimento(this)">Básico</option>
+                    <option id="Prata" value="prata" onclick="selecionarInvestimento(this)">Prata</option>
+                    <option value="ouro" onclick="selecionarInvestimento(this)">Ouro</option>
+                    <option value="diamante" onclick="selecionarInvestimento(this)">Diamante</option>
                 </select>
+
+                <p id="tipoInvestimento">Texto</p>
 
                 <label for="valor_investimento">Valor do Investimento</label>
                 <input type="number" name="valor_investimento" placeholder="Digite o valor do investimento" step="0.01">
-                <!-- <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha">
 
-                <label for="senha-confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha-confirmacao" placeholder="Confirme sua senha"> -->
-
-                    <button class="claro">CADASTRAR</button>
+                    <button class="claro" type="submit">CADASTRAR</button>
             </form>
         </section>
     </section>

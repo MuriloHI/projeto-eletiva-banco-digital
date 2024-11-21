@@ -23,17 +23,38 @@
                 <a href="#">Abrir uma conta</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.php">Conta Digital</a></li>
-                        <li><a href="tela_abrirContaPJ.php">Conta PJ</a></li>
+                        <li><a href="tela_abrirContaPF.php">Conta Digital (PF)</a></li>
+                        <li><a href="tela_abrirContaPJ.php">Conta Empresarial (PJ)</a></li>
                     </ul>
                 </section>
             </li>
-            <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
-            <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
-            <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
-            <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
-            <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
-            <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+            <li class="dropdown">
+                <a href="#">Investimentos</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
+                        <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contas gamBANK</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
+                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Funcionários</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
+                    </ul>
+                </section>
+            </li>
         </ul>
     </nav>
     
@@ -61,19 +82,19 @@
                 <label for="senha">Senha</label>
                 <input type="password" name="senha" placeholder="Digite sua senha">
 
-                <label for="senha-confirmacao">Confirme sua senha</label>
+                <label for="senha_confirmacao">Confirme sua senha</label>
                 <input type="password" name="senha_confirmacao" placeholder="Confirme sua senha">
 
                 <!--Verificar se possível criar banco de dados para essa parte (imagens)-->
                 <p class="selecionar">Selecionar foto de perfil</p>
-                    <label for="foto-perfil"></label>
-                    <input type="file" id="foto-perfil" name="foto-perfil">
+                    <label for="foto_perfil"></label>
+                    <input type="file" id="foto_perfil" name="foto_perfil">
                 
                 <label>
                     <input type="checkbox" name="termos" required>
                         Li e concordo com os <a href="#" target="_blank">Termos e Condições</a>
                 </label>
-                    <button class="claro">CONTINUAR</button>
+                    <button class="claro" type="submit">CONTINUAR</button>
             </form>
         </section>
     </section>

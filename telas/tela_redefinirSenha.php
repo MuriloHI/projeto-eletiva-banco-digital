@@ -28,11 +28,11 @@
                         <label for="email">Email:</label>
                             <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
                         
-                        <label for="nova-senha">Nova Senha:</label>
-                            <input type="password" name="nova-senha" placeholder="Digite sua nova senha" id="nova-senha" required>
+                        <label for="nova_senha">Nova Senha:</label>
+                            <input type="password" name="nova_senha" placeholder="Digite sua nova senha" id="nova-senha" required>
                         
-                        <label for="confirmacao-senha">Confirme a Nova Senha:</label>
-                            <input type="password" name="confirmacao-senha" placeholder="Confirme sua nova senha" id="confirmacao-senha" required>
+                        <label for="confirmacao_senha">Confirme a Nova Senha:</label>
+                            <input type="password" name="confirmacao_senha" placeholder="Confirme sua nova senha" id="confirmacao-senha" required>
                     
                         <button type="submit" class="claro">Redefinir Senha</button>
                     </form>

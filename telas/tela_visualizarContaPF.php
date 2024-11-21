@@ -25,24 +25,44 @@ require_once "../php/funcoesBD.php";
                 <a href="#">Abrir uma conta</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.php">Conta Digital</a></li>
-                        <li><a href="tela_abrirContaPJ.php">Conta PJ</a></li>
+                        <li><a href="tela_abrirContaPF.php">Conta Digital (PF)</a></li>
+                        <li><a href="tela_abrirContaPJ.php">Conta Empresarial (PJ)</a></li>
                     </ul>
                 </section>
             </li>
-            <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
-            <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
-            <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
-            <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
-            <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
-            <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+            <li class="dropdown">
+                <a href="#">Investimentos</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
+                        <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contas gamBANK</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
+                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Funcionários</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
+                    </ul>
+                </section>
+            </li>
         </ul>
     </nav>
     
     <?php
         $listaContasPF = retornarContaPF();
         while($clientePF = mysqli_fetch_assoc($listaContasPF)){
-
         
         echo "<section class='secao_inteira_visualizarContaPF'>";
         echo "<section class='card'>";

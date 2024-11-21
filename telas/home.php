@@ -41,8 +41,8 @@
                 <a href="#">Contas gamBANK</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
                         <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
+                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
                     </ul>
                 </section>
             </li>
@@ -50,8 +50,8 @@
                 <a href="#">Funcionários</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
                         <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
                     </ul>
                 </section>
             </li>

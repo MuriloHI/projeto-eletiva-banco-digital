@@ -1,89 +1,28 @@
-<?php
-require_once "../php/funcoesBD.php";
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizar Investimento</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style_redefinirSenha.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_visualizarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
-
+    <title>gamBANK - Senha redefinida com sucesso</title>
 </head>
 <body>
-    <header class="header">
-        <img src="../img/logo_gamBANK.png" alt="logo da gamBANK">
-        <h1 class="nome-gambank">gamBANK</h1>
-        <p><a href="#">Sair</a></p>
+    <header>
+        <section class="conteudo">
+                <a href="home.php"><img src="../img/logo_gambank.png"></a>
+                <a href="home.php"><h1>gamBANK</h1></a>
+            <h2>Redefinir senha</h2>
+            <p><a href="#">Precisa de ajuda?</a></p>
+        </section>
     </header>
-
-    <nav class="menu-horizontal">
-        <ul>
-            <li><a href="home.php">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Abrir uma conta</a>
-                <section class="dropdown-conteudo">
-                    <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.php">Conta Digital (PF)</a></li>
-                        <li><a href="tela_abrirContaPJ.php">Conta Empresarial (PJ)</a></li>
-                    </ul>
-                </section>
-            </li>
-            <li class="dropdown">
-                <a href="#">Investimentos</a>
-                <section class="dropdown-conteudo">
-                    <ul class="submenu">
-                        <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
-                        <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
-                    </ul>
-                </section>
-            </li>
-            <li class="dropdown">
-                <a href="#">Contas gamBANK</a>
-                <section class="dropdown-conteudo">
-                    <ul class="submenu">
-                        <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
-                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
-                    </ul>
-                </section>
-            </li>
-            <li class="dropdown">
-                <a href="#">Funcionários</a>
-                <section class="dropdown-conteudo">
-                    <ul class="submenu">
-                        <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
-                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
-                    </ul>
-                </section>
-            </li>
-        </ul>
-    </nav>
-    
-    <?php
-    $listaInv = retornarInvestimento();
-    while($inv = mysqli_fetch_assoc($listaInv)){
-    echo "<section class='secao_inteira_visualizarInvestimento'>";
-    echo "<section class='card'>";
-    echo "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";
-    echo  "<p>" . $inv["cpf"] . "</p>";
-    echo  "<p>" . $inv["nomeCompleto"] . "</p>";
-    echo  "<p>" . $inv["dt_nascimento"] . "</p>";
-    echo  "<p>" . $inv["telefone"] . "</p>";
-    echo  "<p>" . $inv["email"] . "</p>";
-    echo  "<p>" . $inv["tipo_conta"] . "</p>";
-    echo  "<p>" . $inv["valor_investimento"] . "</p>";
-    $retorno = calcularRetornoInvestimento($inv["valor_investimento"], $inv["tipo_conta"]);
-    echo  "<p class='retono_em_azul'> RETORNO: R$" . $retorno .  "</p>";
-    echo  "</section>";
-    echo   "</section>";
-    }
-    ?>
-        
-      </section>
-      
-    
+    <section class="container-tela">
+        <section class="redef-senha">
+            <a href="tela_login.php"><img src="../img/back-arrow.png" href="tela_login.php"></a>
+                <h1>Redefinir senha</h1>
+                    <p>Senha redefinida com sucesso.</p>
+        </section>
+    </section>
     <!-- FOOTER -->
     <footer>
         <section class="links">
