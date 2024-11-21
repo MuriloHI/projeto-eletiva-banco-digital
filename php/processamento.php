@@ -3,6 +3,29 @@
 session_start();
 require_once "funcoesBD.php";
 
+
+//Fazer Login
+
+if(!empty($_POST['email']) && !empty($_POST['senha'])){
+
+   $email = $_POST['email'];
+   $senha = $_POST['senha'];
+
+  
+  //chamada da função para BD
+  fazerLogin($email, $senha);
+
+  header('Location: ../telas/tela_login.php');
+  die();
+}
+
+
+//Redefinição da Senha
+
+
+
+
+
 //Abrir Conta de Pessoa Física
 if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && 
    !empty($_POST['dt_nascimento']) && !empty($_POST['telefone']) && 

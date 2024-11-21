@@ -60,7 +60,7 @@
                     <option value="basico">Básico</option>
                     <option value="prata">Prata</option>
                     <option value="ouro">Ouro</option>
-                    <option value="diamanete">Diamante</option>
+                    <option value="diamante">Diamante</option>
                 </select>
 
                 <label for="valor_investimento">Valor do Investimento</label>

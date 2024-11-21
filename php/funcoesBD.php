@@ -5,16 +5,75 @@ function conectarBD(){
     return($conexao);
 } 
 
+function fazerLogin($email, $senha)
+{
+    $conexao = conectarBD(); // Canal de comunicação entre APP e BD
+    
+    // Previne injeção de SQL
+    $email = mysqli_real_escape_string($conexao, $email);
+    $senha = mysqli_real_escape_string($conexao, $senha);
+    
+    // Busca no banco
+    $query = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+    $resultado = mysqli_query($conexao, $query);
+    
+    if (mysqli_num_rows($resultado) > 0) {
+        return "Login bem-sucedido!";
+    } else {
+        return "E-mail ou senha inválidos.";
+    }
+}
+
+
+
+
+function recuperarSenha($email)
+{
+    $conexao = conectarBD(); // Conexão com o banco de dados
+
+    // Previne injeção de SQL
+    $email = mysqli_real_escape_string($conexao, $email);
+
+    // Verifica se o email existe
+    $query = "SELECT * FROM usuarios WHERE email = '$email'";
+    $resultado = mysqli_query($conexao, $query);
+
+    if (mysqli_num_rows($resultado) > 0) {
+        // Gerar token único
+        $token = bin2hex(random_bytes(16));
+        
+        // Armazenar token no banco com validade
+        $queryToken = "INSERT INTO tokens_recuperacao (email, token, validade) VALUES ('$email', '$token', DATE_ADD(NOW(), INTERVAL 1 HOUR))";
+        mysqli_query($conexao, $queryToken);
+
+        // Link para redefinir senha
+        $link = "https://seusite.com/redefinirSenha.php?token=$token";
+
+        // Envia o email (você deve configurar o servidor de e-mails)
+        mail($email, "Recuperação de Senha", "Clique no link para redefinir sua senha: $link");
+
+        return "E-mail enviado com sucesso.";
+    } else {
+        return "E-mail não encontrado.";
+    }
+}
+
+
+
+
+
 function abrirContaPF($cpf, $nomePF, $dataNPF, $telefonePF, $emailPF, $senhaPF, $confirmSenhaPF){
     $conexao = conectarBD(); //canal de comunicação entre APP e BD
-    $query = "INSERT INTO clientepf(cpf, nomeCompleto, dt_nascimento, telefone, email, senha, senha_confirmacao) VALUES('$cpf', '$nomePF', '$dataNPF', '$telefonePF', '$emailPF', '$senhaPF', '$confirmSenhaPF')"; // query que será aplicada no SGBD
-    mysqli_query($conexao, $query);
+    $query = "INSERT INTO clientepf(cpf, nomeCompleto, dt_nascimento, telefone, email, senha, senha_confirmacao) VALUES('$cpf', '$nomePF', '$dataNPF', '$telefonePF', '$emailPF', '$senhaPF', '$confirmSenhaPF')";
+     // query que será aplicada no SGBD
+    mysqli_query($conexao, $query, $query1);
 }
 
 function abrirContaPJ($cnpj, $razaosocial, $telefonePJ, $emailPJ, $senhaPJ, $confirmSenhaPJ){
     $conexao = conectarBD(); //canal de comunicação entre APP e BD
     $query = "INSERT INTO clientpj(cnpj, nomeCompleto, telefone, email, senha, senha_confirmacao) VALUES('$cnpj', '$razaosocial', '$telefonePJ', '$emailPJ', '$senhaPJ', '$confirmSenhaPJ')"; // query que será aplicada no SGBD
-    mysqli_query($conexao, $query);
+    
+    mysqli_query($conexao, $query, $query1);
 }
 
 function inserirFuncionario($cpfFunc, $nomeFunc, $dataNFunc, $telefoneFunc, $emailFunc, $inss)

@@ -13,7 +13,7 @@
     <header class="header">
         <img src="../img/logo_gamBANK.png" alt="logo da gamBANK">
         <h1 class="nome-gambank">gamBANK</h1>
-        <p><a href="tela_login.html">Login</a></p>
+        <p><a href="tela_login.php">Login</a></p>
     </header>
 
     <nav class="menu-horizontal">

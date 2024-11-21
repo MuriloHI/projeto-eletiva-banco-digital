@@ -2,47 +2,42 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../styles/style_login.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style_redefinirSenha.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
     <link rel="stylesheet" href="../styles/style_geral.css">
-
-    <title>gamBANK - Login</title>
+    <title>gamBANK - Esqueci minha senha</title>
 </head>
 <body>
     <header>
         <section class="conteudo">
-            <a href="home.html"><img src="../img/logo_gambank.png"></a>
-            <a href="home.html"><h1>gamBANK</h1></a>
-            <h2>Entre</h2>
+                <a href="home.php"><img src="../img/logo_gambank.png"></a>
+                <a href="home.php"><h1>gamBANK</h1></a>
+            <h2>Redefinir senha</h2>
             <p><a href="#">Precisa de ajuda?</a></p>
         </section>
     </header>
-    <section class="main">
-        <section class="login">
-            <h1>Login</h1>
-                <form method="POST" action="../php/processamento.php">
-                    <label for="email">E-mail</label>
-                        <input type="text" placeholder="Digite seu e-mail" name="email"/>
-                    <label for="senha">Senha</label>
-                        <input type="password" placeholder="Digite sua senha" name="senha"/>
-                </form>
-                    <a href="/telas/home.html"><button class="claro">Entre</button></a>
-                <section class="esqueci-senha-e-sms">
-                    <a href="tela_redefinirSenha.html"><p>Esqueci minha senha</p></a>
-                    <a href="#"><p>Fazer login com SMS</p></a>
-                </section>
-                <p id="linha-horizontal"><span>OU</span</p>
-                <section class="login-alternativas">
-                    <ul>
-                        <li><img src="../img/facebook.png"> Facebook</li>
-                        <li><img src="../img/google.png"> Google</li>
-                        <li><img src="../img/apple.png"> Apple</li>
-                    </ul>
-                </section>
-            <p class="texto-claro">Novo no gamBANK? <a href="tela_abrirContaPF.php" class="destaque_texto">Abrir uma conta</a></p>
+    <section class="container-tela">
+        <section class="redef-senha">
+            <a href="tela_login.php"><img src="../img/back-arrow.png" href="tela_login.php"></a>
+                <h1>Redefinir senha</h1>
+                    <!-- <form>
+                        <label for="email">Informe o seu e-mail para enviarmos um código de autenticação.</label>
+                        <input type="text" placeholder="Email" name="email">
+                    </form> -->
+                    <form method="POST" action="../php/processamento.php">
+                        <label for="email">Email:</label>
+                            <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
+                        
+                        <label for="nova-senha">Nova Senha:</label>
+                            <input type="password" name="nova-senha" placeholder="Digite sua nova senha" id="nova-senha" required>
+                        
+                        <label for="confirmacao-senha">Confirme a Nova Senha:</label>
+                            <input type="password" name="confirmacao-senha" placeholder="Confirme sua nova senha" id="confirmacao-senha" required>
+                    
+                        <button type="submit" class="claro">Redefinir Senha</button>
+                    </form>
         </section>
     </section>
-
     <!-- FOOTER -->
     <footer>
         <section class="links">
