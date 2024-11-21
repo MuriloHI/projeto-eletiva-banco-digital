@@ -1,60 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizar Funcionário</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style_redefinirSenha.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
-    <link rel="stylesheet" href="../styles/style_visualizarFuncionario.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
-
+    <title>gamBANK - Esqueci minha senha</title>
 </head>
 <body>
-    <header class="header">
-        <img src="../img/logo_gamBANK.png" alt="logo da gamBANK">
-        <h1 class="nome-gambank">gamBANK</h1>
-        <p><a href="#">Sair</a></p>
+    <header>
+        <section class="conteudo">
+                <a href="home.html"><img src="../img/logo_gambank.png"></a>
+                <a href="home.html"><h1>gamBANK</h1></a>
+            <h2>Redefinir senha</h2>
+            <p><a href="#">Precisa de ajuda?</a></p>
+        </section>
     </header>
-
-    <nav class="menu-horizontal">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Abrir uma conta</a>
-                <section class="dropdown-conteudo">
-                    <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.php">Conta Digital</a></li>
-                        <li><a href="tela_abrirContaPJ.php">Conta PJ</a></li>
-                    </ul>
-                </section>
-            </li>
-            <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
-            <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
-            <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
-            <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
-            <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
-            <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
-        </ul>
-    </nav>
-
-
-    <?php
-    $listaFunc = retornarFuncionario();
-    while($func = mysqli_fetch_assoc($listaFunc)){
-    echo  "<section class='secao_inteira_visualizarFuncionario'>";
-    echo  "<section class='card'>";
-    echo  "<img class='iconeCliente' src='../img/cliente_foto.png' alt='Avatar do Usuário'>";
-    echo   "<p>" . $func["cpf"] . "</p>";
-    echo   "<p>" . $func["nomeCompleto"] . "</p>";
-    echo   "<p>" . $func["dt-nascimento"] . "</p>";
-    echo   "<p>" . $func["telefone"] . "</p>";
-    echo   "<p>" . $func["email"] . "</p>";
-    echo   "<p>" . $func["inss"] . "</p>";
-    echo   "</section>";
-    echo   "</section>";
-    }
-    ?>
-    
-    
+    <section class="container-tela">
+        <section class="redef-senha">
+            <a href="tela_login.html"><img src="../img/back-arrow.png" href="tela_login.html"></a>
+                <h1>Redefinir senha</h1>
+                    <!-- <form>
+                        <label for="email">Informe o seu e-mail para enviarmos um código de autenticação.</label>
+                        <input type="text" placeholder="Email" name="email">
+                    </form> -->
+                    <form method="POST" action="../php/processamento.php">
+                        <label for="email">Email:</label>
+                            <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
+                        
+                        <label for="nova-senha">Nova Senha:</label>
+                            <input type="password" name="nova-senha" placeholder="Digite sua nova senha" id="nova-senha" required>
+                        
+                        <label for="confirmacao-senha">Confirme a Nova Senha:</label>
+                            <input type="password" name="confirmacao-senha" placeholder="Confirme sua nova senha" id="confirmacao-senha" required>
+                    </form>
+                        <button type="submit" class="claro">Redefinir Senha</button>
+        </section>
+    </section>
     <!-- FOOTER -->
     <footer>
         <section class="links">

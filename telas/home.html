@@ -13,7 +13,7 @@
     <header class="header">
         <img src="../img/logo_gamBANK.png" alt="logo da gamBANK">
         <h1 class="nome-gambank">gamBANK</h1>
-        <p><a href="#">Sair</a></p>
+        <p><a href="tela_login.html">Login</a></p>
     </header>
 
     <nav class="menu-horizontal">
@@ -23,17 +23,38 @@
                 <a href="#">Abrir uma conta</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.html">Conta Digital</a></li>
-                        <li><a href="tela_abrirContaPJ.html">Conta PJ</a></li>
+                        <li><a href="tela_abrirContaPF.php">Conta Digital (PF)</a></li>
+                        <li><a href="tela_abrirContaPJ.php">Conta Empresarial (PJ)</a></li>
                     </ul>
                 </section>
             </li>
-            <li><a href="tela_cadastrarInvestimento.html">Cadastrar Investimento</a></li>
-            <li><a href="tela_visualizarInvestimento.html">Visualizar Investimento</a></li>
-            <li><a href="tela_visualizarFuncionario.html">Visualizar Funcionário</a></li>
-            <li><a href="tela_visualizarContaPJ.html">Visualizar ContaPJ</a></li>
-            <li><a href="tela_visualizarContaPF.html">Visualizar ContaPF</a></li>
-            <li><a href="tela_cadastrarFuncionario.html">Cadastrar Funcionário</a></li> <!-- nome temporário pra poder acessar essa tela-->
+            <li class="dropdown">
+                <a href="#">Investimentos</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
+                        <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contas gamBANK</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
+                        <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
+                    </ul>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#">Funcionários</a>
+                <section class="dropdown-conteudo">
+                    <ul class="submenu">
+                        <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
+                        <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
+                    </ul>
+                </section>
+            </li>
         </ul>
     </nav>
 
@@ -41,7 +62,7 @@
         <section class="texto-imagem"> 
             <p>Confiabilidade para o seu futuro financeiro</p>
         </section>
-        <a href="tela_abrirContaPF.html"><button class="escuro">COMEÇE AQUI</button></a>
+        <a href="tela_abrirContaPF.php"><button class="escuro">COMEÇE AQUI</button></a>
     </section>
 
     <!-- BOOTSTRAP --> 
