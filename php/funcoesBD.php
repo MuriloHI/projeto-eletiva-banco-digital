@@ -7,13 +7,13 @@ function conectarBD(){
 
 function abrirContaPF($cpf, $nomePF, $dataNPF, $telefonePF, $emailPF, $senhaPF, $confirmSenhaPF){
     $conexao = conectarBD(); //canal de comunicação entre APP e BD
-    $query = "INSERT INTO clientePF(cpf, nomeCompleto, dt-nascimento, telefone, email, senha, senha-confirmacao) VALUES('$cpf', '$nomePF', '$dataNPF', '$telefonePF', '$emailPF', '$senhaPF', '$confirmSenhaPF')"; // query que será aplicada no SGBD
+    $query = "INSERT INTO clientepf(cpf, nomeCompleto, dt-nascimento, telefone, email, senha, senha-confirmacao) VALUES('$cpf', '$nomePF', '$dataNPF', '$telefonePF', '$emailPF', '$senhaPF', '$confirmSenhaPF')"; // query que será aplicada no SGBD
     mysqli_query($conexao, $query);
 }
 
 function abrirContaPJ($cnpj, $razaosocial, $telefonePJ, $emailPJ, $senhaPJ, $confirmSenhaPJ){
     $conexao = conectarBD(); //canal de comunicação entre APP e BD
-    $query = "INSERT INTO clientPJ(cnpj, nomeCompleto, telefone, email, senha, senha-confirmacao) VALUES('$cnpj', '$razaosocial', '$telefonePJ', '$emailPJ', '$senhaPJ', '$confirmSenhaPJ')"; // query que será aplicada no SGBD
+    $query = "INSERT INTO clientpj(cnpj, nomeCompleto, telefone, email, senha, senha-confirmacao) VALUES('$cnpj', '$razaosocial', '$telefonePJ', '$emailPJ', '$senhaPJ', '$confirmSenhaPJ')"; // query que será aplicada no SGBD
     mysqli_query($conexao, $query);
 }
 
@@ -33,14 +33,14 @@ function inserirInvestimento($cpf, $nomeCompleto, $dtNascimento, $telefone, $ema
 
 function retornarContaPF(){
     $conexao = conectarBD(); //canal de comunicação entre APP e BD
-    $query = "SELECT * FROM clientePF";
+    $query = "SELECT * FROM clientepf";
     $listaContasPF = mysqli_query($conexao, $query);
     return ($listaContasPF);
 }
 
 function retornarContaPJ(){
     $conexao = conectarBD(); //canal de comunicação entre APP e BD
-    $query = "SELECT * FROM clientePJ";
+    $query = "SELECT * FROM clientepj";
     $listaContasPJ = mysqli_query($conexao, $query);
     return ($listaContasPJ);
 }

@@ -17,7 +17,7 @@
 
     <nav class="menu-horizontal">
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li class="dropdown">
                 <a href="#">Abrir uma conta</a>
                 <section class="dropdown-conteudo">
@@ -48,7 +48,7 @@
     echo  "<p>" . $func["telefone"] . "</p>";
     echo  "<p>" . $func["email"] . "</p>";
     echo  "<p>" . $func["tipo-conta"] . "</p>";
-    echo  "<p>" . $func["valor-investimento"]" . </p>";
+    echo  "<p>" . $func["valor-investimento"] . "</p>";
     $retorno = calcularRetornoInvestimento($func["valor-investimento"], $func["tipo-conta"]);
     echo  "<p class='retono_em_azul'> RETORNO: R$" . $retorno .  "</p>";
     echo  "</section>";
