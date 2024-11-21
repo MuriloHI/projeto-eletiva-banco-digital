@@ -17,22 +17,22 @@
 
     <nav class="menu-horizontal">
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li class="dropdown">
                 <a href="#">Abrir uma conta</a>
                 <section class="dropdown-conteudo">
                     <ul class="submenu">
-                        <li><a href="tela_abrirContaPF.html">Conta Digital</a></li>
-                        <li><a href="tela_abrirContaPJ.html">Conta PJ</a></li>
+                        <li><a href="tela_abrirContaPF.php">Conta Digital</a></li>
+                        <li><a href="tela_abrirContaPJ.php">Conta PJ</a></li>
                     </ul>
                 </section>
             </li>
-            <li><a href="tela_cadastrarInvestimento.html">Cadastrar Investimento</a></li>
-            <li><a href="tela_visualizarInvestimento.html">Visualizar Investimento</a></li>
-            <li><a href="tela_visualizarFuncionario.html">Visualizar Funcionário</a></li>
-            <li><a href="tela_visualizarContaPJ.html">Visualizar ContaPJ</a></li>
-            <li><a href="tela_visualizarContaPF.html">Visualizar ContaPF</a></li>
-            <li><a href="tela_cadastrarFuncionario.html">Cadastrar Funcionário</a></li>
+            <li><a href="tela_cadastrarInvestimento.php">Cadastrar Investimento</a></li>
+            <li><a href="tela_visualizarInvestimento.php">Visualizar Investimento</a></li>
+            <li><a href="tela_visualizarFuncionario.php">Visualizar Funcionário</a></li>
+            <li><a href="tela_visualizarContaPJ.php">Visualizar ContaPJ</a></li>
+            <li><a href="tela_visualizarContaPF.php">Visualizar ContaPF</a></li>
+            <li><a href="tela_cadastrarFuncionario.php">Cadastrar Funcionário</a></li>
         </ul>
     </nav>
 

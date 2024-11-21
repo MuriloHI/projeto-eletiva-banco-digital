@@ -35,17 +35,19 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
    $telefonePJ = $_POST['telefone'];
    $emailPJ = $_POST['email'];
    $senhaPJ = $_POST['senha'];
-   $confirmSenhaPJ = $_POST['senha-confirmacao']
+   $confirmSenhaPJ = $_POST['senha-confirmacao'];
 
 
   abrirContaPJ($cnpj, $razaosocial, $telefonePJ, $emailPJ, $senhaPJ, $confirmSenhaPJ);
 
   header('Location: ../telas/tela_abrirContaPJ.php');
-  
+
+  die();
+  }
   
   
   //Cadastrar Funcionário
-  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['inss']))
+  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['inss'])){
 
   $cpfFunc = $_POST['cpf'];
   $nomeFunc = $_POST['nomeCompleto'];
@@ -57,10 +59,13 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
 
   inserirFuncionario($cpfFunc, $nomeFunc, $dataNFunc, $telefoneFunc, $emailFunc, $inss)
   
-  header('Location: ../telas/tela_cadastrarFuncionario.php')
-  
+  header('Location: ../telas/tela_cadastrarFuncionario.php');
+  die();
+  }
+
+
   //Cadastrar Investimentos
-  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo-conta']) && !empty($_POST['valor-investimento']))
+  if(!empty($_POST['cpf']) && !empty($_POST['nomeCompleto']) && !empty($_POST['dt-nascimento']) && !empty($_POST['telefone']) && !empty($_POST['email']) && !empty($_POST['tipo-conta']) && !empty($_POST['valor-investimento'])){
 
   $cpf = $_POST['cpf'];
   $nomeCompleto = $_POST['nomeCompleto'];
@@ -72,8 +77,10 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
 
   inserirInvestimento($cpf, $nomeCompleto, $dtNascimento, $telefone, $email, $tipoConta, $vlInvest)
 
-  header('Location: ../telas/tela_cadastrarInvestimento.php')
+  header('Location: ../telas/tela_cadastrarInvestimento.php');
 
+  die();
+  }
 
   //Valor do investimento
   function calcularRetornoInvestimento($valorInvestido, $tipoConta) {
@@ -91,6 +98,9 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
     $retorno = $valorInvestido * $taxas[$tipoConta];
     return number_format($retorno, 2, ',', '.');
 
+    die();
+  }
+
 
     // Redefinir Senha
 
@@ -107,10 +117,6 @@ if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
       }
       die();
   }
-  
 
-  
-  die();
-}
 
 ?>
