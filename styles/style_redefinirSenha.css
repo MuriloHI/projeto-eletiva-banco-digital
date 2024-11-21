@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(255, 255, 255);;
+}
+
+/*Header*/
+header {
+    width: 100%;
+    background-color: rgb(42, 40, 172);
+    height: 70px;
+}
+
+header section.conteudo {
+    width: 52%;
+    height: 100%;
+    margin-left: 24%;
+    margin-right: 24%;
+    display: flex;
+    align-items: center;
+}
+
+header section.conteudo img {
+    height: 50px;
+}
+
+header section.conteudo h1 {
+    font-family: Verdana, "Geneva", Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgb(20, 0, 94);
+    color: rgb(52,187,254);
+    margin-left: 8px;
+}
+
+header section.conteudo h2 {
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+}
+
+/*Botão ao lado direito (sair)*/
+header p {
+    margin-left: auto;
+    font-weight: bold;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+
+header a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+header section.conteudo p:hover {
+    transform: scale(1.03) perspective(1px);
+}
+
+/*Corpo*/
+section.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+/*Redefinir Senha*/
+section.redef-senha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    padding: 35px 50px 70px 50px;
+    margin: 30px;
+    box-shadow: 2px 2px 5px rgb(164, 164, 164);
+}
+
+section.redef-senha img { /*seta*/
+    width: 20px;
+    margin-right: 550px;
+    margin-top: -20px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    display: block;
+}
+
+section.redef-senha img:hover {
+    filter: opacity(0.3) drop-shadow(0 0 0 blue);
+    transform: scale(1.06) perspective(1px);
+}
+
+section.redef-senha h1 {
+    margin-bottom: 20px;
+}
+
+section.redef-senha form {
+    display: flex;
+    flex-direction: column;
+}
+
+section.redef-senha label {
+    margin-bottom: 5px;
+}
+
+section.redef-senha input {
+    width: 460px;
+    height: 35px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+section.redef-senha button {
+    width: 490px;
+    height: 40px;
+    padding: 0px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border-style: outset;
+}

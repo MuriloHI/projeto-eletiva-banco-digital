@@ -4,6 +4,7 @@
     margin: 0;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
 /* nome gamBANK */
 h1.nome-gambank {
     font-family: Verdana, "Geneva", Tahoma, sans-serif;
@@ -27,7 +28,8 @@ button.escuro {
 }
 button.escuro:hover {
     background-color: rgb(12, 5, 98);
-    transform: scale(1.02) perspective(1px)
+    transform: scale(1.02) perspective(1px);
+    cursor: pointer;
 }
 /* botão claro */
 button.claro {
@@ -40,9 +42,11 @@ button.claro {
     transition: all 0.3s ease;
     transform: scale(1);
 }
+
 button.claro:hover {
     background-color: rgb(20, 18, 145);
-    transform: scale(1.01) perspective(1px)
+    transform: scale(1.01) perspective(1px);
+    cursor: pointer;
 }
 
 /* menu dropdown */
@@ -61,37 +65,38 @@ button.claro:hover {
     z-index: 1;
 }
 
-/* itens do  menu dropdown */
+/* itens do menu dropdown */
 .dropdown-conteudo ul.submenu {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     padding: 0;
     list-style-type: none;
 }
 
-/*formatacao dos itens do menu dropdown*/
+/* formatacao dos itens do menu dropdown */
 .dropdown-conteudo ul.submenu a {
     color: rgb(0, 0, 0);
     margin: 0;
     text-decoration: none;
     display: block;
 }
+
 /* cor que itens do menu ficam ao passar mouse em cima */
 .dropdown-conteudo ul.submenu a:hover {
     color: rgb(236, 90, 11);
-    /* background-color: rgb(221, 221, 221); */
+    background-color: rgb(221, 221, 221);
 }
 
-/* menu dropdown aparecer */
-.dropdown:hover .dropdown-conteudo {
-    display: block;
-}
-
-/* cor que o "abrir uma conta" ficara enquanto menu dropdown estiver ativo */
-.dropdown:hover {
+/* cor que o "abrir uma conta" ficará enquanto menu dropdown estiver ativo */
+.dropdown:hover, .dropdown:hover > a {
     color: rgb(251, 119, 48);
     background-color: rgb(255, 255, 255);
+}
+
+.dropdown:hover .dropdown-conteudo, 
+.dropdown .dropdown-conteudo:hover {
+    display: block;
 }
 
 /* formulário */
@@ -224,6 +229,7 @@ footer section.redes-sociais a {
 footer section.baixar-apps img:hover {
     transform: scale(1.03) perspective(1px)
 }
+
 /*direitos reservados e localizacao*/
 footer section.texto-rodape p{
     font-size: 17px;
