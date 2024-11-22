@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
     <link rel="stylesheet" href="../styles/style_cadastrarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
-    <script type="text/javascript" src="../script_selecaoInvestimento.js"></script>
+    <script type="text/javascript" src="../javascript/script_selecaoInvestimento.js"></script>
 
 </head>
 <body>
@@ -63,29 +63,40 @@
             <h2>Cadastrar Investimento</h2>
             <form method="POST" action="../php/processamento.php">
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf" placeholder="Digite o CPF">
+                <input type="text" name="cpf" placeholder="Digite o CPF" required>
     
                 <label for="nomeCompleto">Nome</label>
-                <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
+                <input type="text" name="nomeCompleto" placeholder="Digite o nome completo" required>
 
                 <label for="dt_nascimento">Data de Nascimento</label>
                 <input type="date" name="dt_nascimento">
     
                 <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" placeholder="Digite o telefone">
+                <input type="text" name="telefone" placeholder="Digite o telefone" required>
     
                 <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Digite o e-mail">
+                <input type="email" name="email" placeholder="Digite o e-mail" required>
 
-                <label for="tipo_conta">Tipo de Conta</label>
-                <select name="tipo_conta" id="tipo_conta">
-                    <option id="Basico" value="basico" onclick="selecionarInvestimento(this)">Básico</option>
-                    <option id="Prata" value="prata" onclick="selecionarInvestimento(this)">Prata</option>
-                    <option value="ouro" onclick="selecionarInvestimento(this)">Ouro</option>
-                    <option value="diamante" onclick="selecionarInvestimento(this)">Diamante</option>
+                <!-- <label for="tipo_investimento">Investimento</label>
+                <input type="text" name="tipo_investimento" placeholder="Digite o tipo de investimento financeiro" required> -->
+
+                <label for="tipo_investimentoo">Investimento</label>
+                <select name="tipo_investimentoo" id="tipo_investimentoo" required>
+                    <option id="Basico" value="basico">Poupança</option>
+                    <option id="Prata" value="prata">Tesouro Direto</option>
+                    <option id="Ouro" value="ouro">CDB</option>
+                    <option id="Diamante" value="diamante">LCI/LCA</option>
                 </select>
 
-                <p id="tipoInvestimento">Texto</p>
+                <label for="tipo_conta">Tipo de Conta</label>
+                <select name="tipo_conta" id="tipo_conta" onchange="selecionarInvestimento()" required>
+                    <option id="Basico" value="basico">Básico</option>
+                    <option id="Prata" value="prata">Prata</option>
+                    <option id="Ouro" value="ouro">Ouro</option>
+                    <option id="Diamante" value="diamante">Diamante</option>
+                </select>
+
+                <p id="tipoInvestimento">Investimento Básico - 2%</p> <!--Texto indicando o tipo de conta escolhido-->
 
                 <label for="valor_investimento">Valor do Investimento</label>
                 <input type="number" name="valor_investimento" placeholder="Digite o valor do investimento" step="0.01">

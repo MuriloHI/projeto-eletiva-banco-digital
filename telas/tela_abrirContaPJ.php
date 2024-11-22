@@ -65,23 +65,27 @@
             <h2>Abrir conta PJ</h2>
             <form method="POST" action="../php/processamento.php">
                 <label for="cnpj">CNPJ</label>
-                <input type="text" name="cpf" placeholder="Digite o CNPJ">
+                <input type="text" name="cpf" placeholder="Digite o CNPJ" required>
     
                 <label for="nomeCompleto">Razão Social</label>
-                <input type="text" name="nomeCompleto" placeholder="Digite a razão social da empresa">
+                <input type="text" name="nomeCompleto" placeholder="Digite a razão social da empresa" required>
     
                 <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" placeholder="Digite o telefone">
+                <input type="text" name="telefone" placeholder="Digite o telefone" required>
     
                 <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Digite o e-mail">
+                <input type="email" name="email" placeholder="Digite o e-mail" required>
     
                 <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite a senha">
+                <input type="password" name="senha" id="senha_cadastro" placeholder="Digite a senha" required>
 
                 <label for="senha_confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha_confirmacao" placeholder="Confirme a senha">
-                    
+                <input type="password" name="senha_confirmacao" id="confirmar_senha" placeholder="Confirme a senha" required>
+                
+                <section>
+                    <p id="aviso_confirmacao_senha" style="display: none;">As senhas precisam ser iguais.</p>
+                </section>
+
                 <label>
                     <input type="checkbox" name="termos" required>
                         Li e concordo com os <a href="#" target="_blank">Termos e Condições</a>
@@ -90,6 +94,9 @@
             </form>
         </section>
     </section>
+
+    <!-- Nota: Javascript alocado embaixo pois ele deve ser executado depois do HTML -->
+    <script type="text/javascript" src="../javascript/script_confirmarSenha.js"></script>
 
     <!-- FOOTER -->
     <footer>

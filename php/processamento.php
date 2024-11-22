@@ -122,14 +122,23 @@ else if(!empty($_POST['cnpj']) && !empty($_POST['nomeCompleto']) &&
       $novaSenha = $_POST['nova_senha'];
       $confirmacaoSenha = $_POST['confirmacao_senha'];
   
-      if ($novaSenha === $confirmacaoSenha) {
+      if ($novaSenha == $confirmacaoSenha) {
           redefinirSenha($email, $novaSenha);
-          header('Location: ../telas/tela_login.php');
-      } else {
-          header('Location: ../telas/tela_redefinirSenha.php?erro=senhas-nao-conferem');
+          header('Location: ../telas/tela_redefinirSenha.php?status=sucesso'); //parametro query
+          exit();
+
+          // header('Location: ../telas/tela_redefinirSenha.php');
+          // echo "<script>
+          //       document.getElementById('formulario').style.display = 'none';
+          //       document.getElementById('confirmacao-redef-senha').style.display = 'block';
+          //       </script>";
+
+      }
+      else {
+          header('Location: ../telas/tela_redefinirSenha.php?erro=senhas-nao-conferem'); //parametro query
+          exit();
       }
       die();
   }
-
 
 ?>

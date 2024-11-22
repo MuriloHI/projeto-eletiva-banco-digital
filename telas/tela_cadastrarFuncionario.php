@@ -62,22 +62,22 @@
             <h2>Cadastrar Funcionário</h2>
             <form method="POST" action="../php/processamento.php">
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf" placeholder="Digite o CPF">
+                <input type="text" name="cpf" placeholder="Digite o CPF" required>
     
                 <label for="nomeCompleto">Nome</label>
-                <input type="text" name="nomeCompleto" placeholder="Digite o nome completo">
+                <input type="text" name="nomeCompleto" placeholder="Digite o nome completo" required>
 
                 <label for="dt_nascimento">Data de Nascimento</label>
                 <input type="date" name="dt_nascimento">
     
                 <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" placeholder="Digite o telefone">
+                <input type="text" name="telefone" placeholder="Digite o telefone" required>
     
                 <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Digite o e-mail">
+                <input type="email" name="email" placeholder="Digite o e-mail" required>
 
                 <label for="inss">&#8470 de INSS</label>
-                <input type="text" name="inss" placeholder="Digite o &#8470 do INSS">
+                <input type="text" name="inss" placeholder="Digite o &#8470 do INSS" required>
     
                 <!-- <label for="senha">Senha</label>
                 <input type="password" name="senha" placeholder="Digite sua senha">

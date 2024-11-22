@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
     <link rel="stylesheet" href="../styles/style_abrirContaPF.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
-
 </head>
 <body>
     <header class="header">
@@ -65,27 +64,30 @@
             <h2>Abrir conta PF</h2>
             <form method="POST" action="../php/processamento.php">
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf" placeholder="Digite seu CPF">
+                <input type="text" name="cpf" placeholder="Digite seu CPF" required>
     
                 <label for="nomeCompleto">Nome</label>
-                <input type="text" name="nomeCompleto" placeholder="Digite seu nome completo">
+                <input type="text" name="nomeCompleto" placeholder="Digite seu nome completo" required>
 
                 <label for="dt_nascimento">Data de Nascimento</label>
-                <input type="date" name="dt_nascimento">
+                <input type="date" name="dt_nascimento" required>
     
                 <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" placeholder="Digite seu telefone">
+                <input type="text" name="telefone" placeholder="Digite seu telefone" required>
     
                 <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Digite seu e-mail">
+                <input type="email" name="email" placeholder="Digite seu e-mail" required>
     
                 <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha">
+                <input type="password" name="senha" id="senha_cadastro" placeholder="Digite sua senha" required>
 
                 <label for="senha_confirmacao">Confirme sua senha</label>
-                <input type="password" name="senha_confirmacao" placeholder="Confirme sua senha">
+                <input type="password" name="senha_confirmacao" id="confirmar_senha" placeholder="Confirme sua senha" required>
 
-                <!--Verificar se possível criar banco de dados para essa parte (imagens)-->
+                <section>
+                    <p id="aviso_confirmacao_senha" style="display: none;">As senhas precisam ser iguais.</p>
+                </section>
+
                 <p class="selecionar">Selecionar foto de perfil</p>
                     <label for="foto_perfil"></label>
                     <input type="file" id="foto_perfil" name="foto_perfil">
@@ -98,6 +100,9 @@
             </form>
         </section>
     </section>
+
+    <!-- Nota: Javascript alocado embaixo pois ele deve ser executado depois do HTML -->
+    <script type="text/javascript" src="../javascript/script_confirmarSenha.js"></script>
 
     <!-- FOOTER -->
     <footer>

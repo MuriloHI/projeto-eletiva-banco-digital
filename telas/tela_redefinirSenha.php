@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/style_redefinirSenha.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
     <link rel="stylesheet" href="../styles/style_geral.css">
+    <script type="text/javascript" src="../javascript/script_mudancaTelaRedefinirSenha.js"></script>
     <title>gamBANK - Esqueci minha senha</title>
 </head>
 <body>
@@ -17,27 +18,42 @@
         </section>
     </header>
     <section class="container-tela">
-        <section class="redef-senha">
-            <a href="tela_login.php"><img src="../img/back-arrow.png" href="tela_login.php"></a>
-                <h1>Redefinir senha</h1>
-                    <!-- <form>
-                        <label for="email">Informe o seu e-mail para enviarmos um código de autenticação.</label>
-                        <input type="text" placeholder="Email" name="email">
-                    </form> -->
-                    <form method="POST" action="../php/processamento.php">
-                        <label for="email">Email:</label>
-                            <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
-                        
-                        <label for="nova_senha">Nova Senha:</label>
-                            <input type="password" name="nova_senha" placeholder="Digite sua nova senha" id="nova-senha" required>
-                        
-                        <label for="confirmacao_senha">Confirme a Nova Senha:</label>
-                            <input type="password" name="confirmacao_senha" placeholder="Confirme sua nova senha" id="confirmacao-senha" required>
-                    
-                        <button type="submit" class="claro">Redefinir Senha</button>
-                    </form>
+        <section class="redef-senha" id="formulario">
+            <a href="tela_login.php"><img src="../img/back-arrow.png" alt="Voltar"></a>
+            <h1>Redefinir senha</h1>
+            <form method="POST" action="../php/processamento.php">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Digite seu e-mail" id="email" required>
+                
+                <label for="nova_senha">Nova Senha:</label>
+                <input type="password" name="nova_senha" placeholder="Digite sua nova senha" id="nova-senha" required>
+                
+                <label for="confirmacao_senha">Confirme a Nova Senha:</label>
+                <input type="password" name="confirmacao_senha" placeholder="Confirme sua nova senha" id="confirmacao-senha" required>
+            
+                <button type="submit" class="claro">Redefinir Senha</button>
+                </form>
         </section>
     </section>
+
+    <!-- Tela quando senha for redefinida com sucesso -->
+    <?php if (isset($_GET["status"]) && $_GET["status"] === "sucesso"): ?>
+        <section class="container-tela">
+            <section class="redef-senha" id="confirmacao-redef-senha">
+                <a href="tela_login.php"><img src="../img/back-arrow.png" alt="Voltar"></a>
+                <h1>Redefinir senha</h1>
+                <p>Senha redefinida com sucesso.</p>
+            </section>
+        </section>
+    <?php endif; ?>
+
+    <!-- Tela se senhas nao baterem -->
+    <?php if (isset($_GET["erro"]) && $_GET["erro"] == "senhas-nao-conferem"): ?>
+        <script>
+            alert('ERRO: Senhas não conferem. Por favor, tente novamente.');
+        </script>
+    <?php endif; ?>
+
     <!-- FOOTER -->
     <footer>
         <section class="links">
