@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--ICONES REDES SOCIAIS-->
     <link rel="stylesheet" href="../styles/style_cadastrarInvestimento.css">
     <link rel="stylesheet" href="../styles/style_geral.css">
-    <script type="text/javascript" src="../javascript/script_selecaoInvestimento.js"></script>
 
 </head>
 <body>
@@ -77,17 +76,6 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" placeholder="Digite o e-mail" required>
 
-                <!-- <label for="tipo_investimento">Investimento</label>
-                <input type="text" name="tipo_investimento" placeholder="Digite o tipo de investimento financeiro" required> -->
-
-                <label for="tipo_investimentoo">Investimento</label>
-                <select name="tipo_investimentoo" id="tipo_investimentoo" required>
-                    <option id="Basico" value="basico">Poupança</option>
-                    <option id="Prata" value="prata">Tesouro Direto</option>
-                    <option id="Ouro" value="ouro">CDB</option>
-                    <option id="Diamante" value="diamante">LCI/LCA</option>
-                </select>
-
                 <label for="tipo_conta">Tipo de Conta</label>
                 <select name="tipo_conta" id="tipo_conta" onchange="selecionarInvestimento()" required>
                     <option id="Basico" value="basico">Básico</option>
@@ -102,6 +90,9 @@
                 <input type="number" name="valor_investimento" placeholder="Digite o valor do investimento" step="0.01">
 
                     <button class="claro" type="submit">CADASTRAR</button>
+
+                <script type="text/javascript" src="../javascript/script_selecaoInvestimento.js"></script>
+
             </form>
         </section>
     </section>
